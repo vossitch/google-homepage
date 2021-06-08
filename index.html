@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crafty Google</title>
+
+<style>
+
+.grid-container {
+    display: grid;
+    grid-gap: 10px 50px;
+    width: 100%;
+    grid-template-columns: auto 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr;
+    background: LightGray;
+    grid-template-areas: 
+    "header header header"
+    "content content content"
+    "button button button"
+    "footer footer footer";
+}
+
+.grid-logo {
+    background:lightskyblue;
+    grid-column: 1/4;
+}
+
+.form-box  {
+    background:palegreen;
+    grid-column: 1/4;
+}
+
+.button-gsearch {
+    background: paleturquoise;
+    grid-column: 1/4;
+   }
+
+.button-lucky {
+    background: lightsalmon;
+    grid-column: 2/3;
+   
+}
+
+.glogo {
+display: block;
+margin-left: auto;
+margin-right: auto;
+align-items: center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grid-container">
+<div class="grid-logo">
+    <img class="glogo" src="googlelogo_color_272x92dp.png" alt="Google Logo">
+</div>
+    <form>
+        <div class="form-box"><input type="text"></div>
+    </form>
+    <form>
+        <div class="button-gsearch"><input type="button" value="Google Search"></div>
+        <div class="button-lucky"><input type="button" value="I'm feeling Lucky"></div>
+    </form>
+
+</div>
+
+</body>
+
+</html>
