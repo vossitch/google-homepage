@@ -10,35 +10,78 @@
     display: grid;
     grid-gap: 10px 50px;
     width: 100%;
-    grid-template-columns: auto 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto 1fr 1fr 1fr;
     background: LightGray;
     grid-template-areas: 
-    "header header header"
-    "content content content"
-    "button button button"
-    "footer footer footer";
+    "header header header header"
+    "logo logo logo logo"
+    ". content content ."
+    "footer footer footer footer";
 }
 
 .grid-logo {
     background:lightskyblue;
-    grid-column: 1/4;
+    grid-area: logo;
 }
 
-.form-box  {
-    background:palegreen;
-    grid-column: 1/4;
+.gform {
+    grid-area: content;
+    display: grid;
+    grid-template-columns:285px 285px;
+    grid-template-rows: 1fr 1fr;
+    align-self: center;
+    justify-self: center;
 }
 
-.button-gsearch {
-    background: paleturquoise;
-    grid-column: 1/4;
+#formbox  {
+    grid-column: 1/3;
+    width: 584px;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 6px;
+    height: 34px !important;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.87);
+    align-self: center;
+    justify-self: center;
+}
+
+#button-gsearch {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
    }
 
-.button-lucky {
+#button-lucky {
     background: lightsalmon;
     grid-column: 2/3;
-   
+    grid-row: 2/3;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
 }
 
 .glogo {
@@ -48,21 +91,60 @@ margin-right: auto;
 align-items: center;
 }
 
+#ul {
+    grid-area: header;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: seagreen;
+}
+
+#li-left {
+    text-decoration: none;
+    float: left;
+    display: block;
+    text-align: center;
+    padding-right: 15px;
+    line-height: 24px;
+    font-family: arial,sans-serif;
+}
+
+#li-right {
+    text-decoration: none;
+    float: right;
+    display: block;
+    padding-right: 15px;
+    line-height: 24px;
+    font-family: arial,sans-serif;
+}
+
+
 </style>
 </head>
 
 <body>
 
 <div class="grid-container">
-<div class="grid-logo">
+
+<ul id="ul">
+    <li id="li-left">About</li>
+    <li id="li-left">Store</li>
+    <li id="li-right">Gmail</li>
+    <li id="li-right">Images</li>
+    <li id="li-right">Sign In</li>
+</ul>
+
+    <div class="grid-logo">
     <img class="glogo" src="googlelogo_color_272x92dp.png" alt="Google Logo">
-</div>
-    <form>
-        <div class="form-box"><input type="text"></div>
-    </form>
-    <form>
-        <div class="button-gsearch"><input type="button" value="Google Search"></div>
-        <div class="button-lucky"><input type="button" value="I'm feeling Lucky"></div>
+    </div>
+    <form class="gform">
+        <input type="text" id="formbox">
+        <input type="button" value="Google Search" id="button-gsearch">
+        <input type="button" value="I'm feeling Lucky" id="button-lucky">
     </form>
 
 </div>
